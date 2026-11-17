@@ -1,0 +1,107 @@
+.shell powershell
+
+# Reload whkd configuration
+alt + o                 : & "C:\Users\Laziko\.config\yasb\komorebi_launcher.exe" --reload-whkd
+alt + shift + o         : & "C:\Program Files\komorebi\bin\komorebic.exe" reload-configuration
+
+alt + i                 : & "C:\Program Files\komorebi\bin\komorebic.exe" toggle-shortcuts
+
+# === Quick Launch Hotkeys (per-workspace: focus if open here, else launch new window) ===
+# Avoided conflicts with komorebi, YASB (alt+a, alt+w), and Windows shortcuts
+alt + space             : & "C:\Users\Laziko\.config\yasb\smart_launcher.exe" --toggle
+alt + e                 : & "C:\Users\Laziko\.config\yasb\folder_menu.exe" --toggle
+alt + oem_2             : & "C:\Users\Laziko\.config\yasb\hotkey_cheatsheet.exe" --toggle
+alt + oem_3             : & "C:\Users\Laziko\.config\yasb\scratchpad.exe" --toggle
+alt + z                 : & "C:\Users\Laziko\.config\yasb\audio_visualizer.exe" --toggle
+ctrl + alt + z          : & "C:\Users\Laziko\.config\yasb\audio_visualizer.exe" --mode
+alt + g                 : & "C:\Users\Laziko\.config\yasb\live_wallpaper.exe" --toggle
+ctrl + alt + g          : & "C:\Users\Laziko\.config\yasb\live_wallpaper.exe" --mode
+alt + shift + g         : & "C:\Users\Laziko\.config\yasb\live_wallpaper.exe" --next
+ctrl + alt + shift + g  : & "C:\Users\Laziko\.config\yasb\live_wallpaper.exe" --prev
+ctrl + alt + w          : & "C:\Users\Laziko\.config\yasb\wallpaper_gallery.exe" --toggle
+alt + u                 : & "C:\Users\Laziko\.config\yasb\effects_menu.exe"
+alt + v                 : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" launch "WindowsTerminal.exe|wt.exe" "wt.exe" -w new -p "Windows PowerShell"
+alt + shift + e         : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" launch "explorer.exe" "explorer.exe"
+alt + b                 : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" launch "msedge.exe" "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --new-window
+alt + c                 : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" launch "Code.exe" "C:\Users\Laziko\AppData\Local\Programs\Microsoft VS Code\Code.exe" -n
+alt + s                 : Start-Process ms-settings:
+
+# === Taskbar / Current Workspace App Switcher ===
+ctrl + alt + oem_3      : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" cycle next
+alt + shift + oem_3     : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" cycle prev
+ctrl + alt + right      : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" cycle next
+ctrl + alt + left       : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" cycle prev
+ctrl + alt + 1          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 1
+ctrl + alt + 2          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 2
+ctrl + alt + 3          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 3
+ctrl + alt + 4          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 4
+ctrl + alt + 5          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 5
+ctrl + alt + 6          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 6
+ctrl + alt + 7          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 7
+ctrl + alt + 8          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 8
+ctrl + alt + 9          : & "C:\Users\Laziko\.config\yasb\workspace_app.exe" slot 9
+
+alt + q                 : & "C:\Program Files\komorebi\bin\komorebic.exe" close
+alt + m                 : & "C:\Program Files\komorebi\bin\komorebic.exe" minimize
+
+# Focus windows
+alt + h                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus left
+alt + j                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus down
+alt + k                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus up
+alt + l                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus right
+alt + shift + oem_4     : & "C:\Program Files\komorebi\bin\komorebic.exe" cycle-focus previous # oem_4 is [
+alt + shift + oem_6     : & "C:\Program Files\komorebi\bin\komorebic.exe" cycle-focus next # oem_6 is ]
+
+# Move windows
+alt + shift + h         : & "C:\Program Files\komorebi\bin\komorebic.exe" move left
+alt + shift + j         : & "C:\Program Files\komorebi\bin\komorebic.exe" move down
+alt + shift + k         : & "C:\Program Files\komorebi\bin\komorebic.exe" move up
+alt + shift + l         : & "C:\Program Files\komorebi\bin\komorebic.exe" move right
+alt + shift + return    : & "C:\Program Files\komorebi\bin\komorebic.exe" promote
+
+# Stack windows
+alt + left              : & "C:\Program Files\komorebi\bin\komorebic.exe" stack left
+alt + down              : & "C:\Program Files\komorebi\bin\komorebic.exe" stack down
+alt + up                : & "C:\Program Files\komorebi\bin\komorebic.exe" stack up
+alt + right             : & "C:\Program Files\komorebi\bin\komorebic.exe" stack right
+alt + oem_1             : & "C:\Program Files\komorebi\bin\komorebic.exe" unstack # oem_1 is ;
+alt + oem_4             : & "C:\Program Files\komorebi\bin\komorebic.exe" cycle-stack previous # oem_4 is [
+alt + oem_6             : & "C:\Program Files\komorebi\bin\komorebic.exe" cycle-stack next # oem_6 is ]
+
+# Resize
+alt + oem_plus          : & "C:\Program Files\komorebi\bin\komorebic.exe" resize-axis horizontal increase
+alt + oem_minus         : & "C:\Program Files\komorebi\bin\komorebic.exe" resize-axis horizontal decrease
+alt + shift + oem_plus  : & "C:\Program Files\komorebi\bin\komorebic.exe" resize-axis vertical increase
+alt + shift + oem_minus : & "C:\Program Files\komorebi\bin\komorebic.exe" resize-axis vertical decrease
+
+# Manipulate windows
+alt + t                 : & "C:\Program Files\komorebi\bin\komorebic.exe" toggle-float
+alt + shift + f         : & "C:\Program Files\komorebi\bin\komorebic.exe" toggle-monocle
+
+# Window manager options
+alt + shift + r         : & "C:\Program Files\komorebi\bin\komorebic.exe" retile
+alt + p                 : & "C:\Program Files\komorebi\bin\komorebic.exe" toggle-pause
+
+# Layouts
+alt + x                 : & "C:\Program Files\komorebi\bin\komorebic.exe" flip-layout horizontal
+alt + y                 : & "C:\Program Files\komorebi\bin\komorebic.exe" flip-layout vertical
+
+# Workspaces
+alt + 1                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 0
+alt + 2                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 1
+alt + 3                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 2
+alt + 4                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 3
+alt + 5                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 4
+alt + 6                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 5
+alt + 7                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 6
+alt + 8                 : & "C:\Program Files\komorebi\bin\komorebic.exe" focus-workspace 7
+
+# Move windows across workspaces
+alt + shift + 1         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 0
+alt + shift + 2         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 1
+alt + shift + 3         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 2
+alt + shift + 4         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 3
+alt + shift + 5         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 4
+alt + shift + 6         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 5
+alt + shift + 7         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 6
+alt + shift + 8         : & "C:\Program Files\komorebi\bin\komorebic.exe" move-to-workspace 7

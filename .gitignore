@@ -1,0 +1,20 @@
+# Wallpapers / thumbnails / media ("без фонов")
+yasb/video_thumbs/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.bmp
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# Logs, flags, personal notes and runtime state
+*.log
+*.flag
+yasb/yasb.log
+yasb/scratchpad_notes.txt
+yasb/smart_launcher_history.txt
+yasb/power_control_state.txt
